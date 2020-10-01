@@ -1,0 +1,22 @@
+Package: statr
+Type: Package
+Title: Provides a SAS®-like interface to R statistical functions
+Version: 0.0.9000
+Author: Kevin Kramer
+Maintainer: Kevin Kramer <kevin.kramer@experis.com>
+Description: Contains functions that provide a SAS®-like interface to R 
+    statistics. The package has two primary purposes: default statistics 
+    options to match SAS® outputs, and provide function calls that resemble 
+    those found in SAS®. This approach will make it much easier for users to 
+    replace SAS® programs with R programs, when desired, and make it easier 
+    for SAS® programmers to learn R.
+License: CC0
+Encoding: UTF-8
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
+Imports: rlang,
+         dplyr
+LazyData: true
+RoxygenNote: 7.1.1
