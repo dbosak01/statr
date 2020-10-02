@@ -185,5 +185,37 @@ getVars <- function(x) {
 }
 
 
+#' @title Print a freq class
+#' @param x The freq object to print.
+#' @param ... Any follow on parameters.
+#' @param verbose Whether to print the object in list form.
+#' @return The freq object, invisibly
+#' @export
+print.freq <- function(x, ..., verbose = FALSE) {
 
+  if (verbose == TRUE)
+    print(unclass(x))
+  else {
+
+    cat("# class 'freq':\n")
+    cat(paste0("- by: ", paste(x$by, collapse = " "), "\n"))
+
+  }
+
+  invisible(x)
+}
+
+#' @title Print an exact class
+#' @param x The object to print.
+#' @param ... Any follow on parameters.
+#' @param verbose Whether to print the object in list form.
+#' @return The exact object, invisibly
+#' @export
+print.exact <- function(x, ..., verbose = FALSE) {
+
+  print(unclass(x))
+
+  invisible(x)
+
+}
 

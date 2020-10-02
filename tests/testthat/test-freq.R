@@ -43,16 +43,19 @@ test_that("freq() function basically works as expected.", {
   f <- freq(data=mtcars,
          by=vars(mpg, cyl),
          exact(fisher, fisherout, opts(ci)),
-         exact(chisq, chisqout),
          tables = requests(v1, v2, v1 * v2),
          test=list(),
          weight=vars(cnt1),
          options=opts(o1, o2))
-  f
+
+  f$data
+  f$by
+  f$exacts
+  f$results
 
   expect_equal(nrow(f$data), 32)
   expect_equal(f$by, c("mpg", "cyl"))
-  expect_equal(length(f$exacts), 2)
+  expect_equal(length(f$exacts), 1)
   expect_equal(f$tables, c("v1", "v2", "v1 * v2"))
   expect_equal(f$test, list())
   expect_equal(f$weight, c("cnt1"))
@@ -82,7 +85,7 @@ test_that("freq() function work as expected for a simple frequency.", {
 
   f <- freq(data=dat,
             by=vars(mpggrp, cyl))
-
+  f
   f$results
 
   expect_equal(nrow(f$results), 2)
